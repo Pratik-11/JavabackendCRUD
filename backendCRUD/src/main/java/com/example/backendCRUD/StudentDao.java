@@ -13,8 +13,8 @@ public class StudentDao {
 
     //creating the table
     public void createTable(){
-        var query = "CREATE TABLE student(id SERIAL PRIMARY KEY,name VARCHAR(255) NOT NULL,city VARCHAR(255) NOTNULL)";
+        String query = "CREATE TABLE student(id SERIAL PRIMARY KEY,name VARCHAR(255) NOT NULL,city VARCHAR(255) NOT NULL)";
         int update= this.jdbcTemplate.update(query);
-        system.out.println(update);
+        System.out.println(update);
     }
 }
