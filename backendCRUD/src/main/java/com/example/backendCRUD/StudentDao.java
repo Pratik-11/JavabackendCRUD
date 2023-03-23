@@ -1,4 +1,20 @@
 package com.example.backendCRUD;
 
+import org.springframework.stereotype.Repository;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+
+
+@Repository
 public class StudentDao {
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    //creating the table
+    public void createTable(){
+        var query = "CREATE TABLE student(id SERIAL PRIMARY KEY,name VARCHAR(255) NOT NULL,city VARCHAR(255) NOTNULL)";
+        int update= this.jdbcTemplate.update(query);
+        system.out.println(update);
+    }
 }
