@@ -17,4 +17,13 @@ public class StudentDao {
         int update= this.jdbcTemplate.update(query);
         System.out.println(update);
     }
+
+    public void insertData(String name, String city){
+        String query = "insert into student(name,city) values(?,?)";
+        int update= this.jdbcTemplate.update(query,name,city);
+        System.out.println(update +"rows added");
+    }
+
+
+
 }
