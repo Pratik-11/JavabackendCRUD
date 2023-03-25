@@ -24,6 +24,17 @@ public class StudentDao {
         System.out.println(update +"rows added");
     }
 
+    public void retrieveAllData(){
+        String query = "select * from student";
+        int update= this.jdbcTemplate.update(query);
+        System.out.println(update);
+    }
+
+    public void updateData(String name, String city ,String newName, String newCity){
+        String query = "update student where name=? and city=? set name=? and city=?";
+        int update= this.jdbcTemplate.update(query,name,city,newName,newCity);
+        System.out.println(update);
+    }
 
 
 }
