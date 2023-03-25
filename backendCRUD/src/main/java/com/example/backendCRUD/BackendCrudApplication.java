@@ -18,7 +18,10 @@ public class BackendCrudApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		this.studentDao.createTable();
+		//this.studentDao.insertData("pratik","dehradun");
+		//this.studentDao.retrieveAllData();
+		this.studentDao.updateData("pratik","dehradun","p","d");
+		//this.studentDao.retrieveAllData();
 	}
 
 }

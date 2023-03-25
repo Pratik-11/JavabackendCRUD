@@ -30,9 +30,9 @@ public class StudentDao {
         System.out.println(update);
     }
 
-    public void updateData(String name, String city ,String newName, String newCity){
-        String query = "update student where name=? and city=? set name=? and city=?";
-        int update= this.jdbcTemplate.update(query,name,city,newName,newCity);
+    public void updateData(String newName, String newCity,String name, String city ){
+        String query = "update student set name=?,city=? where name=? and city=?";
+        int update= this.jdbcTemplate.update(query,newName,newCity,name,city);
         System.out.println(update);
     }
 
